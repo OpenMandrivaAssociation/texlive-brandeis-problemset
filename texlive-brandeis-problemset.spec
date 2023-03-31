@@ -1,6 +1,6 @@
 Name:		texlive-brandeis-problemset
 Version:	50991
-Release:	1
+Release:	2
 Summary:	Document class for COSI Problem sets at Brandeis University (Waltham, MA)
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/brandeis-problemset
