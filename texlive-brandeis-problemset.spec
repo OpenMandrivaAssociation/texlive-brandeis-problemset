@@ -3,7 +3,7 @@ Version:	50991
 Release:	2
 Summary:	Document class for COSI Problem sets at Brandeis University (Waltham, MA)
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/brandeis-problemset
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/brandeis-problemset
 License:	lppl1.3c
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/brandeis-problemset.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/brandeis-problemset.doc.r%{version}.tar.xz
