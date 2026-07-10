@@ -1,40 +1,26 @@
-Name:		texlive-brandeis-problemset
-Version:	50991
-Release:	2
+%global tl_name brandeis-problemset
+%global tl_revision 50991
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.5.5
+Release:	%{tl_revision}.1
 Summary:	Document class for COSI Problem sets at Brandeis University (Waltham, MA)
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/brandeis-problemset
 License:	lppl1.3c
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/brandeis-problemset.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/brandeis-problemset.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/brandeis-problemset.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/brandeis-problemset.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-Brandeis University's computer science ("COSI") courses often
-assign "problem sets" which require fairly rigorous formatting.
-This document class, which extends article, provides a simple
-way to typeset these problem sets in LaTeX. Although the class
-is compatible with all LaTeX flavors, XeLaTeX or LuaLaTeX are
-recommended for fontspec support.
+Brandeis University's computer science ("COSI") courses often assign
+"problem sets" which require fairly rigorous formatting. This document
+class, which extends article, provides a simple way to typeset these
+problem sets in LaTeX. Although the class is compatible with all LaTeX
+flavors, XeLaTeX or LuaLaTeX are recommended for fontspec support.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/brandeis-problemset
-%doc %{_texmfdistdir}/doc/latex/brandeis-problemset
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
